@@ -9,15 +9,14 @@
     <meta name="author" content="Creative Tim">
     <title>Argon Dashboard - Free Dashboard for Bootstrap 4</title>
     <!-- Favicon -->
-{{--    {{dd(asset('img/brand/favicon.png'))}}--}}
+    {{--    {{dd(asset('img/brand/favicon.png'))}}--}}
 
     <link rel="icon" href="{{asset('img/brand/favicon.png')}}" type="image/png">
-
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
     <!-- Icons -->
-    <link rel="stylesheet" href=" {{ asset('css/nucleo.css') }}" type="text/css">
-    <link rel="stylesheet" href=" {{ asset('css/all.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="assets/vendor/nucleo/css/nucleo.css" type="text/css">
+    <link rel="stylesheet" href="assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css">
     <!-- Page plugins -->
     <!-- Argon CSS -->
     <link rel="stylesheet" href="{{asset('css/argon.css?v=1.2.0')}}" type="text/css">
@@ -25,14 +24,14 @@
 
 <body>
 <!-- Sidenav -->
-@include('backend.layouts.includes.sidenav')
+@include('frontend.includes.sidenav')
 <!-- Main content -->
 <div class="main-content" id="panel">
 
     <!-- Topnav -->
-@include('backend.layouts.includes.header')
+@include('frontend.includes.header')
 
-    <!-- Header -->
+<!-- Header -->
     <div class="header bg-primary pb-6">
         <div class="container-fluid">
             <div class="header-body">
@@ -424,23 +423,23 @@
         </div>
 
         <!-- Footer -->
-@include('backend.layouts.includes.footer')
+        @include('frontend.includes.footer')
 
 
     </div>
 </div>
 <!-- Argon Scripts -->
 <!-- Core -->
-<script src="{{asset('js/jquery.min.js')}}"></script>
-<script src="{{asset('js/bootstrap.bundle.min.js')}}s"></script>
-<script src="{{asset('js/js.cookie.js')}}"></script>
-<script src="{{asset('js/jquery.scrollbar.min.js')}}"></script>
-<script src="{{asset('js/jquery-scrollLock.min.js')}}"></script>
+<script src="assets/vendor/jquery/dist/jquery.min.js"></script>
+<script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/js-cookie/js.cookie.js"></script>
+<script src="assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
+<script src="assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
 <!-- Optional JS -->
-<script src="{{asset('js/Chart.min.js')}}"></script>
-<script src="{{asset('js/Chart.extension.js')}}"></script>
+<script src="assets/vendor/chart.js/dist/Chart.min.js"></script>
+<script src="assets/vendor/chart.js/dist/Chart.extension.js"></script>
 <!-- Argon JS -->
-<script src="{{asset('js/argon.js?v=1.2.0')}}"></script>
+<script src="assets/js/argon.js?v=1.2.0"></script>
 </body>
 
 </html>

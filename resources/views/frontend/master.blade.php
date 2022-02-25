@@ -191,6 +191,7 @@
                     <div class="signinBtnDiv">
                         <div class="dropdown">
                             <button id="signinBtn" class="showSignoutBtnHover">Sign in</button>
+
                             <div class="dropdownContent" id="dropdownContent">
                                 <a href="javascript:void(0)" id="myAds">My Ads</a>
                                 <a href="javascript:void(0)" id="favorites">Favorites</a>
@@ -399,7 +400,7 @@
     }
 </script>
 <!-- js -->
-<script src="js/app.js"></script>
+<script src="app.js"></script>
 </body>
 
 </html>

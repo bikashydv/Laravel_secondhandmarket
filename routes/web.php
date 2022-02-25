@@ -15,5 +15,18 @@ Route::get('/', function () {
     return view('frontend.master');
 });
 
-Route::get( '/admin/login',[\App\Http\Controllers\AdminController::class,'login'])->name('admin.login');
-Route::post( '/admin/login',[\App\Http\Controllers\AdminController::class,'submit'])->name('admin.submit');
+Route::get('/admin/login', [\App\Http\Controllers\AdminController::class, 'login'])->name('admin.login');
+Route::get('/dashboard', [\App\Http\Controllers\AdminController::class, 'adminDashboard'])->name('admin.dashboard');
+Route::post('/admin/submit', [\App\Http\Controllers\AdminController::class, 'submit'])->name('admin.submit');
+Route::get('/admin/logout', [\App\Http\Controllers\AdminController::class, 'logout'])->name('admin.logout');
+
+//Relation
+Route::get('/product', [\App\Http\Controllers\ControllerProduct::class, 'product'])->name('product');
+Route::get('/category', [\App\Http\Controllers\ControllerProduct::class, 'category'])->name('category');
+
+
+
+
+Auth::routes();
+Route::get('/logout','LoginController@logout')->name('logout');
+Route::get('/home', 'HomeController@index')->name('home');
