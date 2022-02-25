@@ -432,7 +432,7 @@
 <!-- Argon Scripts -->
 <!-- Core -->
 <script src="{{asset('js/jquery.min.js')}}"></script>
-<script src="{{asset('js/bootstrap.bundle.min.js')}}s"></script>
+<script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
 <script src="{{asset('js/js.cookie.js')}}"></script>
 <script src="{{asset('js/jquery.scrollbar.min.js')}}"></script>
 <script src="{{asset('js/jquery-scrollLock.min.js')}}"></script>

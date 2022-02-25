@@ -190,7 +190,7 @@
                 <div class="right">
                     <div class="signinBtnDiv">
                         <div class="dropdown">
-                            <button id="signinBtn" class="showSignoutBtnHover">Sign in</button>
+                            <button id="signinBtn" class="showSignoutBtnHover" onclick="location.href='{{ \Illuminate\Support\Facades\Auth::check() ?   route('logout') : route('login') }}'"> {{ \Illuminate\Support\Facades\Auth::check() ? 'Sign Out': 'Sign in' }}</button>
 
                             <div class="dropdownContent" id="dropdownContent">
                                 <a href="javascript:void(0)" id="myAds">My Ads</a>
@@ -202,6 +202,7 @@
                     <div class="sellBtnDiv">
                         <button id="sellBtn">Sell</button>
                     </div>
+
                 </div>
             </div>
         </div>

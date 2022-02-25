@@ -25,8 +25,6 @@ Route::get('/product', [\App\Http\Controllers\ControllerProduct::class, 'product
 Route::get('/category', [\App\Http\Controllers\ControllerProduct::class, 'category'])->name('category');
 
 
-
-
+Route::get('/logout',[\App\Http\Controllers\Auth\LoginController::class,'logout'])->name('logout');
 Auth::routes();
-Route::get('/logout','LoginController@logout')->name('logout');
 Route::get('/home', 'HomeController@index')->name('home');
