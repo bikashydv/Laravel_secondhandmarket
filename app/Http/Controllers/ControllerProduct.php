@@ -20,4 +20,11 @@ class ControllerProduct extends Controller
         $category=Category::with('products')->first();
         dd($category);
     }
+
+    public  function site(){
+        return view('backend.site_setting');
+    }
+
+
+
 }

@@ -23,8 +23,11 @@ Route::get('/admin/logout', [\App\Http\Controllers\AdminController::class, 'logo
 //Relation
 Route::get('/product', [\App\Http\Controllers\ControllerProduct::class, 'product'])->name('product');
 Route::get('/category', [\App\Http\Controllers\ControllerProduct::class, 'category'])->name('category');
-
+\Illuminate\Support\Facades\Route::get('/site_setting',[\App\Http\Controllers\ControllerProduct::class,'site'])->name('site.setting');
 
 Route::get('/logout',[\App\Http\Controllers\Auth\LoginController::class,'logout'])->name('logout');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
+
+//site settings
+
