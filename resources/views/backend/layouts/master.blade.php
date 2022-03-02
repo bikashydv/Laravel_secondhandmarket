@@ -33,15 +33,14 @@
 @include('backend.layouts.includes.header')
 
     <!-- Header -->
-
+@yield('content')
     <!-- Page content -->
     <div class="container-fluid mt--6">
 
         <!-- Footer -->
-
-
         @include('backend.layouts.includes.footer')
     </div>
+
 
 </div>
 
