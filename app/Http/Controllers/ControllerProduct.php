@@ -29,6 +29,10 @@ class ControllerProduct extends Controller
         return view('backend.layouts.dashboard');
     }
 
+    public function categoryView(){
+        return view('backend.category');
+    }
+
 
 
 }

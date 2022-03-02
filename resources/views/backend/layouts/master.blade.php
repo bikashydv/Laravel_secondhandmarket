@@ -43,15 +43,6 @@
 @include('backend.layouts.includes.footer')
 </div>
 
-
-
-
-
-
-
-
-
-
 <!-- Argon Scripts -->
 <!-- Core -->
 <script src="{{asset('js/jquery.min.js')}}"></script>
