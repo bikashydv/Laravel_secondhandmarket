@@ -21,28 +21,36 @@
     <!-- Page plugins -->
     <!-- Argon CSS -->
     <link rel="stylesheet" href="{{asset('css/argon.css?v=1.2.0')}}" type="text/css">
+
+    <style>
+        .footer{
+            position: fixed;
+            margin-top: auto;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 
 <body>
+
 <!-- Sidenav -->
 @include('backend.layouts.includes.sidenav')
 <!-- Main content -->
 <div class="main-content" id="panel">
-
-    <!-- Topnav -->
 @include('backend.layouts.includes.header')
-
-    <!-- Header -->
-@yield('content')
-    <!-- Page content -->
-    <div class="container-fluid mt--6">
-
-        <!-- Footer -->
-        @include('backend.layouts.includes.footer')
-    </div>
-
-
+    @yield('content')
+@include('backend.layouts.includes.footer')
 </div>
+
+
+
+
+
+
+
+
+
 
 <!-- Argon Scripts -->
 <!-- Core -->

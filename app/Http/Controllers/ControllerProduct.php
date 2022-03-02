@@ -25,6 +25,10 @@ class ControllerProduct extends Controller
         return view('backend.site_setting');
     }
 
+    public function dashboard(){
+        return view('backend.layouts.dashboard');
+    }
+
 
 
 }
