@@ -30,7 +30,7 @@ Route::get('/category', [\App\Http\Controllers\ControllerProduct::class, 'catego
 Route::get('/logout',[\App\Http\Controllers\Auth\LoginController::class,'logout'])->name('logout');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/dashboard','ControllerProduct@dashboard')->name('dashboard');
+//Route::get('/dashboard','ControllerProduct@dashboard')->name('dashboard');
 
 
 
