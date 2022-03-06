@@ -16,11 +16,14 @@ class CreateSiteSettingsTable extends Migration
         Schema::create('site_settings', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('system_name')->nullable();
-            $table->string('mobile_number')->nullable();
-            $table->string('phone_number')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('mobile')->nullable();
             $table->string('address')->nullable();
+            $table->string('slogan')->nullable();
             $table->string('facebook')->nullable();
-            $table->string('twitter')->nullable();
+            $table->string('instagram')->nullable();
+            $table->string('youtube')->nullable();
+            $table->string('copyright')->nullable();
             $table->string('logo')->nullable();
             $table->timestamps();
         });

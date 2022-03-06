@@ -170,8 +170,8 @@
             <div class="container">
                 <div class="left">
                     <div class="mainLogo">
-                        <a href="./index.html">
-                            <img src="./images/logo.png" alt="logo">
+                        <a href="{{ url('/') }}">
+                            <img src="{{ \Illuminate\Support\Facades\Session::get('site_setting') ?  \Illuminate\Support\Facades\Session::get('site_setting')->logo: ''  }}" alt="logo" height="100px" width="100px">
                         </a>
                     </div>
                     <div class="location">
@@ -358,9 +358,9 @@
                 </div>
                 <div class="oneFifth footerSocial">
                     <h3>Find us here</h3>
-                    <a href="#"><i class="fab fa-facebook-square"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="{{\Illuminate\Support\Facades\Session::get('site_setting') ?  \Illuminate\Support\Facades\Session::get('site_setting')->facebook: '' }}" target="_blank"><i class="fab fa-facebook-square"></i></a>
+                    <a href="{{\Illuminate\Support\Facades\Session::get('site_setting') ?  \Illuminate\Support\Facades\Session::get('site_setting')->youtube: '' }}" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="{{\Illuminate\Support\Facades\Session::get('site_setting') ?  \Illuminate\Support\Facades\Session::get('site_setting')->instagram : ''}}" target="_blank"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </div>
@@ -377,7 +377,7 @@
                 </div>
                 <div class="right">
                         <span class="copyrights">
-                            Copyrights &copy; OLX, 2019.
+                            Copyrights &copy; {{ \Illuminate\Support\Facades\Session::get('site_setting') ?  \Illuminate\Support\Facades\Session::get('site_setting')->copyright :'' }}
                         </span>
                 </div>
             </div>

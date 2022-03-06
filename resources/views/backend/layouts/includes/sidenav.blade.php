@@ -3,7 +3,7 @@
         <!-- Brand -->
         <div class="sidenav-header  align-items-center">
             <a class="navbar-brand" href="javascript:void(0)">
-                <img src="{{ asset('img/brand/2.png') }}" class="navbar-brand-img" alt="...">
+                <img src="{{ \Illuminate\Support\Facades\Session::get('site_setting') ?  \Illuminate\Support\Facades\Session::get('site_setting')->logo: ''  }}" class="navbar-brand-img" alt="...">
             </a>
         </div>
         <div class="navbar-inner">
@@ -19,10 +19,18 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('site.setting') }}">
-                            <i class="ni ni-planet text-orange"></i>
+                            <i class="ni ni-single-02 text-yellow"></i>
                             <span class="nav-link-text">Site Setting</span>
                         </a>
                     </li>
+
+
+{{--                    <li class="nav-item">--}}
+{{--                        <a class="nav-link" href="{{ route('site.setting') }}">--}}
+{{--                            <i class="ni ni-planet text-orange"></i>--}}
+{{--                            <span class="nav-link-text">Site Setting</span>--}}
+{{--                        </a>--}}
+{{--                    </li>--}}
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('category.view') }}">
                             <i class="ni ni-pin-3 text-primary"></i>

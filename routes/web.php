@@ -11,7 +11,15 @@
 |
 */
 
+
 Route::get('/', function () {
+//    $is_fetched = false;
+//    if($is_fetched){
+        $settings = \App\site_setting::find(1);
+        \Illuminate\Support\Facades\Session::put('site_setting',$settings);
+//        dd(\Illuminate\Support\Facades\Session::get('site_setting'));
+//        $is_fetched =true;
+//    }
     return view('frontend.master');
 });
 
@@ -25,12 +33,15 @@ Route::get('/product', [\App\Http\Controllers\ControllerProduct::class, 'product
 Route::get('/category', [\App\Http\Controllers\ControllerProduct::class, 'category'])->name('category');
 
 //site settings
-\Illuminate\Support\Facades\Route::get('/site_setting',[\App\Http\Controllers\ControllerProduct::class,'site'])->name('site.setting');
+//\Illuminate\Support\Facades\Route::get('/site_setting',[\App\Http\Controllers\ControllerProduct::class,'site'])->name('site.setting');
 
 Route::get('/logout',[\App\Http\Controllers\Auth\LoginController::class,'logout'])->name('logout');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/category_view','ControllerProduct@categoryView')->name('category.view');
+
+\Illuminate\Support\Facades\Route::get('/site_setting',[\App\Http\Controllers\SiteSettingController::class,'site'])->name('site.setting');
+\Illuminate\Support\Facades\Route::post('/update_settings',[\App\Http\Controllers\SiteSettingController::class,'updateSetting'])->name('update.setting');
 
 
 
