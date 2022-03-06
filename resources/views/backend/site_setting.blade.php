@@ -33,10 +33,19 @@
         </div>
 
         <div class="form-group">
-            <label for="exampleInputEmail1">Social media</label>
+            <label for="exampleInputEmail1">Facebook</label>
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                   placeholder="facbook, instagram,">
+                   placeholder="facebook">
         </div>
+
+        <div class="form-group">
+            <label for="exampleInputEmail1">Twitter</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                   placeholder="instagram">
+        </div>
+
+        <button type="button" class="btn btn-dark">update</button>
+
 
     </form>
 @endsection

@@ -28,6 +28,7 @@
             margin-top: auto;
             bottom: 0;
             width: 100%;
+            padding: 1px 0;
         }
     </style>
 </head>
@@ -40,7 +41,7 @@
 <div class="main-content" id="panel">
 @include('backend.layouts.includes.header')
     @yield('content')
-@include('backend.layouts.includes.footer')
+{{--@include('backend.layouts.includes.footer')--}}
 </div>
 
 <!-- Argon Scripts -->
