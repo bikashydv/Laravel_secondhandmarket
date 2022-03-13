@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>OLX - Buy and sell for free</title>
-    <link rel="icon" href="./images/favicon.png">
+    <title>SecondHandBazar</title>
+    <link rel="icon" href="./images/fav.png" height="200" width="200">
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet">
     <!-- stylesheets -->
@@ -30,7 +30,7 @@
         <div class="headingDiv">
             <span class="heading">Sign in</span>
             <br>
-            <span>Buy &amp; sell things easily with OLX.</span>
+            <span>Buy &amp; sell things easily secondHandbazer</span>
         </div>
         <div id="signinWarning"></div>
         <form id="signinForm">
@@ -41,7 +41,7 @@
         <p>Don't have an account? <a href="#" id="signupBtn">Sign up</a></p>
     </div>
 </div>
-<!-- /signin popup -->
+
 
 <!-- signup popup -->
 <div id="signupPopup">
@@ -64,7 +64,6 @@
         <p>Already have an account? <a href="#" id="signinBtn_2">Sign in</a></p>
     </div>
 </div>
-<!-- /signup popup -->
 
 <!-- category popup -->
 <div id="categoryPopup">
@@ -105,7 +104,6 @@
         </form>
     </div>
 </div>
-<!-- /category popup -->
 
 <!-- sell popup -->
 <div id="sellPopup">
@@ -171,7 +169,7 @@
                 <div class="left">
                     <div class="mainLogo">
                         <a href="{{ url('/') }}">
-                            <img src="{{ \Illuminate\Support\Facades\Session::get('site_setting') ?  \Illuminate\Support\Facades\Session::get('site_setting')->logo: ''  }}" alt="logo" height="100px" width="100px">
+                             <img src="{{ \Illuminate\Support\Facades\Session::get('site_setting') ?  \Illuminate\Support\Facades\Session::get('site_setting')->logo: ''  }}" alt="logo" height="45px" width="45px">
                         </a>
                     </div>
                     <div class="location">
@@ -201,7 +199,9 @@
                     </div>
                     <div class="sellBtnDiv">
                         <button id="sellBtn">Sell</button>
+
                     </div>
+
 
                 </div>
             </div>
@@ -228,7 +228,7 @@
 
     <!-- banner -->
     <div class="mainBanner" id="mainBanner">
-        <img src="./images/banner-1.jpg" alt="banner-image" id="mainBannerImg">
+        <img src="./images/1.jpg " alt="banner-image" id="mainBannerImg">
     </div>
     <!-- /banner -->
 
@@ -330,29 +330,16 @@
     <footer>
         <div class="top">
             <div class="container">
-                <div class="oneFifth">
-                    <h3>Popular Categories</h3>
-                    <a href="#">Cars</a><br>
-                    <a href="#">Flats for rent</a><br>
-                    <a href="#">Jobs</a><br>
-                    <a href="#">Mobile Phones</a>
-                </div>
-                <div class="oneFifth">
-                    <h3>Popular Searches</h3>
-                    <a href="#">Bikes</a><br>
-                    <a href="#">Watches</a><br>
-                    <a href="#">Books</a><br>
-                    <a href="#">Dogs</a>
-                </div>
+
                 <div class="oneFifth">
                     <h3>About us</h3>
-                    <a href="#">About OLX Group</a><br>
-                    <a href="#">OLX Blog</a><br>
+                    <a href="#">About SHB Group</a><br>
+                    <a href="#">SHB Blog</a><br>
                     <a href="#">Contact us </a><br>
                     <a href="#">Business Packages</a>
                 </div>
                 <div class="oneFifth">
-                    <h3>Olx</h3>
+                    <h3>SHB</h3>
                     <a href="#">Help</a><br>
                     <a href="#">Sitemap</a><br>
                 </div>
@@ -366,15 +353,15 @@
         </div>
         <div class="bottom">
             <div class="container">
-                <div class="left">
-                        <span class="countries">
-                            Change country:
-                            <a href="#">South Africa</a>
-                            <a href="#">India</a>
-                            <a href="#">Kenya</a>
-                            <a href="#">Ghana</a>
-                        </span>
-                </div>
+{{--                <div class="left">--}}
+{{--                        <span class="countries">--}}
+{{--                            Change country:--}}
+{{--                            <a href="#">South Africa</a>--}}
+{{--                            <a href="#">India</a>--}}
+{{--                            <a href="#">Kenya</a>--}}
+{{--                            <a href="#">Ghana</a>--}}
+{{--                        </span>--}}
+{{--                </div>--}}
                 <div class="right">
                         <span class="copyrights">
                             Copyrights &copy; {{ \Illuminate\Support\Facades\Session::get('site_setting') ?  \Illuminate\Support\Facades\Session::get('site_setting')->copyright :'' }}
@@ -401,7 +388,7 @@
     }
 </script>
 <!-- js -->
-<script src="app.js"></script>
+<script src="{{asset('js/frontend.js')}}"></script>
 </body>
 
 </html>

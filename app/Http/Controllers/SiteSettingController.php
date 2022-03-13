@@ -25,7 +25,7 @@ class SiteSettingController extends Controller
             'mobile' => 'required',
             'address' => 'required',
             'slogan' => 'required',
-            'logo' => 'required',
+//            'logo' => 'required',
             'youtube' => 'required',
             'instagram' => 'required',
             'facebook' => 'required',
@@ -56,6 +56,8 @@ class SiteSettingController extends Controller
 
         DB::table('site_settings')->truncate();
         site_setting::insert($data);
+//        dd('done');
         return redirect()->back();
     }
 }
+

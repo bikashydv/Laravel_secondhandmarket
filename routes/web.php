@@ -34,14 +34,15 @@ Route::get('/category', [\App\Http\Controllers\ControllerProduct::class, 'catego
 
 //site settings
 //\Illuminate\Support\Facades\Route::get('/site_setting',[\App\Http\Controllers\ControllerProduct::class,'site'])->name('site.setting');
+\Illuminate\Support\Facades\Route::get('/site_setting',[\App\Http\Controllers\SiteSettingController::class,'site'])->name('site.setting');
+\Illuminate\Support\Facades\Route::post('/update_settings',[\App\Http\Controllers\SiteSettingController::class,'updateSetting'])->name('update.setting');
+
 
 Route::get('/logout',[\App\Http\Controllers\Auth\LoginController::class,'logout'])->name('logout');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/category_view','ControllerProduct@categoryView')->name('category.view');
 
-\Illuminate\Support\Facades\Route::get('/site_setting',[\App\Http\Controllers\SiteSettingController::class,'site'])->name('site.setting');
-\Illuminate\Support\Facades\Route::post('/update_settings',[\App\Http\Controllers\SiteSettingController::class,'updateSetting'])->name('update.setting');
 
 
 
