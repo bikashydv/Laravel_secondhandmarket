@@ -13,13 +13,7 @@
 
 
 Route::get('/', function () {
-//    $is_fetched = false;
-//    if($is_fetched){
-        $settings = \App\site_setting::find(1);
-        \Illuminate\Support\Facades\Session::put('site_setting',$settings);
-//        dd(\Illuminate\Support\Facades\Session::get('site_setting'));
-//        $is_fetched =true;
-//    }
+    \App\Helper::updateSiteSetting();
     return view('frontend.master');
 });
 
