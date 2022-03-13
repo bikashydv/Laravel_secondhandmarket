@@ -38,29 +38,25 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="examples/tables.html">
+                            <i class="ni ni-bullet-list-67 text-default"></i>
+                            <span class="nav-link-text">Sub categories</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="examples/profile.html">
                             <i class="ni ni-single-02 text-yellow"></i>
                             <span class="nav-link-text">Product</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="examples/tables.html">
-                            <i class="ni ni-bullet-list-67 text-default"></i>
-                            <span class="nav-link-text">Tables</span>
-                        </a>
-                    </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="examples/login.html">
                             <i class="ni ni-key-25 text-info"></i>
-                            <span class="nav-link-text">Login</span>
+                            <span class="nav-link-text">Order</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="examples/register.html">
-                            <i class="ni ni-circle-08 text-pink"></i>
-                            <span class="nav-link-text">Register</span>
-                        </a>
-                    </li>
+
                 </ul>
 
             </div>
