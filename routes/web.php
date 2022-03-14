@@ -13,13 +13,7 @@
 
 
 Route::get('/', function () {
-//    $is_fetched = false;
-//    if($is_fetched){
-        $settings = \App\site_setting::find(1);
-        \Illuminate\Support\Facades\Session::put('site_setting',$settings);
-//        dd(\Illuminate\Support\Facades\Session::get('site_setting'));
-//        $is_fetched =true;
-//    }
+    \App\Helper::updateSiteSetting();
     return view('frontend.master');
 });
 
@@ -31,6 +25,7 @@ Route::get('/admin/logout', [\App\Http\Controllers\AdminController::class, 'logo
 //Relation
 Route::get('/product', [\App\Http\Controllers\ControllerProduct::class, 'product'])->name('product');
 Route::get('/category', [\App\Http\Controllers\ControllerProduct::class, 'category'])->name('category');
+
 
 //site settings
 //\Illuminate\Support\Facades\Route::get('/site_setting',[\App\Http\Controllers\ControllerProduct::class,'site'])->name('site.setting');

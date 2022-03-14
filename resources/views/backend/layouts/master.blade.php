@@ -42,6 +42,7 @@
 <!-- Main content -->
 <div class="main-content" id="panel">
 @include('backend.layouts.includes.header')
+
     @yield('content')
 {{--@include('backend.layouts.includes.footer')--}}
 </div>

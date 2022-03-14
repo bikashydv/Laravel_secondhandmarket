@@ -56,6 +56,8 @@ class SiteSettingController extends Controller
 
         DB::table('site_settings')->truncate();
         site_setting::insert($data);
+
+    \App\Helper::updateSiteSetting();
 //        dd('done');
         return redirect()->back();
     }
