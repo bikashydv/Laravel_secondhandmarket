@@ -13,8 +13,10 @@
 
 
 Route::get('/', function () {
+    $data =[];
     \App\Helper::updateSiteSetting();
-    return view('frontend.master');
+    $data['categories'] = \App\Helper::getCategories();
+    return view('frontend.master', $data);
 });
 
 Route::get('/admin/login', [\App\Http\Controllers\AdminController::class, 'login'])->name('admin.login');
