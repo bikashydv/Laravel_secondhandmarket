@@ -11,4 +11,9 @@ class Helper
 
     }
 
+    public  static function getCategories(){
+        $categories = Category::where('status',1)->get();
+        return $categories;
+    }
+
 }
