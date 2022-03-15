@@ -32,7 +32,7 @@
 {{--                        </a>--}}
 {{--                    </li>--}}
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('category.view') }}">
+                        <a class="nav-link" href="{{ route('category') }}">
                             <i class="ni ni-pin-3 text-primary"></i>
                             <span class="nav-link-text">Category</span>
                         </a>

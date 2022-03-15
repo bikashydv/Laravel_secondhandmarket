@@ -16,9 +16,9 @@ class ControllerProduct extends Controller
 
     public function category()
     {
+        $category=Category::get();
+        return view('backend.category-index');
 
-        $category=Category::with('products')->first();
-        dd($category);
     }
 
     public  function site(){
