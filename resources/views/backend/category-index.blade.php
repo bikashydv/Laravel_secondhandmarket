@@ -30,11 +30,11 @@
                                                 <th> {{ $categories -> id ??  null }} </th>
                                                 <td> {{ $categories -> name ??  null }} </td>
                                                 <td> {{ $categories -> description ??  null }} </td>
-                                                <td> <i class="{{ $categories -> icon ??  null }}"></i> </td>
+                                                <td>  <img src="{{$categories->image}}" height="50px"> </td>
                                                 <td> {{ $categories -> status=='1' ? 'Active' : 'Inactive'}} </td>
                                                 <td>
-                                                <a href=" {{ route('category.edit', $categories->id) }}" class="btn btn-primary"> Edit</a>
-                                                <a href="{{ route('category.delete', $categories->id) }}" class="btn btn-primary"> Delete</a>
+                                                <a href=" {{ route('category.edit', $categories->id) }}" class="btn btn-primary">Edit</a>
+                                                <a href="{{ route('category.delete', $categories->id) }}" class="btn btn-primary">Delete</a>
                                                 </td>
                                             </tr>
                                             @empty

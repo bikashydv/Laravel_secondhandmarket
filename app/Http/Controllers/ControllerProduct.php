@@ -31,6 +31,20 @@ class ControllerProduct extends Controller
 
     public function categoryView(){
         return view('backend.category');
+
+    }
+
+    public function categoryedit()
+    {
+        $categories=category-index::where('id',$id)->first();
+        return view('backend.category-index', compact('categories'));
+    }
+
+    public function categorydelete()
+    {
+        dd(" This product is deleted sucessfully");
+        Category::destroy($id);
+        return redirect()->back();
     }
 
 

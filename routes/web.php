@@ -28,6 +28,11 @@ Route::get('/admin/logout', [\App\Http\Controllers\AdminController::class, 'logo
 Route::get('/product', [\App\Http\Controllers\ControllerProduct::class, 'product'])->name('product');
 Route::get('/category', [\App\Http\Controllers\ControllerProduct::class, 'category'])->name('category');
 
+// categories
+Route::get('/categoryedit', [\App\Http\Controllers\ControllerProduct::class, 'category'])->name('category.edit');
+Route::get('/categorydelete', [\App\Http\Controllers\ControllerProduct::class, 'category'])->name('category.delete');
+
+
 
 //site settings
 //\Illuminate\Support\Facades\Route::get('/site_setting',[\App\Http\Controllers\ControllerProduct::class,'site'])->name('site.setting');
