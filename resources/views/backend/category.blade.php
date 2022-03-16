@@ -8,11 +8,11 @@
                 <input type="file" class="form-control-file" id="exampleFormControlFile1">
             </div>
         </form>
-{{--        <div class="form-group">--}}
-{{--            <label for="exampleInputEmail1">System name</label>--}}
-{{--            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"--}}
-{{--                   placeholder="System name">--}}
-{{--        </div>--}}
+        <div class="form-group">
+            <label for="exampleInputEmail1">System name</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                   placeholder="System name">
+        </div>
 
         <div class="form-group">
             <label for="exampleInputEmail1">Mobile number</label>
