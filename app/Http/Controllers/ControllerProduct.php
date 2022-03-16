@@ -16,8 +16,8 @@ class ControllerProduct extends Controller
 
     public function category()
     {
-        $category=Category::get();
-        return view('backend.category-index');
+        $categories =Category::get();
+        return view('backend.category-index', compact('categories'));
 
     }
 
