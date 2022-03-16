@@ -29,8 +29,9 @@ Route::get('/product', [\App\Http\Controllers\ControllerProduct::class, 'product
 Route::get('/category', [\App\Http\Controllers\ControllerProduct::class, 'category'])->name('category');
 
 // categories
-Route::get('/categoryedit', [\App\Http\Controllers\ControllerProduct::class, 'category'])->name('category.edit');
-Route::get('/categorydelete', [\App\Http\Controllers\ControllerProduct::class, 'category'])->name('category.delete');
+Route::view('/create-category','backend.category')->name('category.create');
+Route::get('/categoryedit/{id}', [\App\Http\Controllers\ControllerProduct::class, 'categoryedit'])->name('category.edit');
+Route::get('/categorydelete/{id}', [\App\Http\Controllers\ControllerProduct::class, 'categorydelete'])->name('category.delete');
 
 
 

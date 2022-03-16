@@ -34,15 +34,19 @@ class ControllerProduct extends Controller
 
     }
 
-    public function categoryedit()
+    public function storeCategory(Request  $request){
+        dd($request->all());
+    }
+
+    public function categoryedit($id)
     {
-        $categories=category-index::where('id',$id)->first();
+        $categories=Category::where('id',$id)->first();
         return view('backend.category-index', compact('categories'));
     }
 
-    public function categorydelete()
+    public function categorydelete($id)
     {
-        dd(" This product is deleted sucessfully");
+//        dd(" This product is deleted sucessfully");
         Category::destroy($id);
         return redirect()->back();
     }

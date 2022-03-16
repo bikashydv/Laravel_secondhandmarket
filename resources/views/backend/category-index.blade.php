@@ -8,7 +8,7 @@
                                     </h6>
                                 </div>
                                 <br>
-                                <input type="button" value="+Add New Item" style="position: absolute; right: 0;" class="btn btn-dark">
+                                <a href="{{ route('category.create') }}"  style="position: absolute; right: 0;" class="btn btn-dark">+Add New Item</a>
                                 <br>
                                 <div class="card-body">
                                     <div class="table-responsive">
@@ -25,16 +25,17 @@
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            @forelse($categories as $categories)
+                                            @forelse($categories as $category)
                                             <tr>
-                                                <th> {{ $categories -> id ??  null }} </th>
-                                                <td> {{ $categories -> name ??  null }} </td>
-                                                <td> {{ $categories -> description ??  null }} </td>
-                                                <td>  <img src="{{$categories->image}}" height="50px"> </td>
-                                                <td> {{ $categories -> status=='1' ? 'Active' : 'Inactive'}} </td>
+                                                <th> {{ $category -> id ??  null }} </th>
+                                                <td> {{ $category -> name ??  null }} </td>
+                                                <td> {{ $category -> description ??  null }} </td>
+                                                <td>  <i class="{{ $category->icon ?? '' }}"></i> </td>
+{{--                                                <td>  <img src="{{$category->image}}" height="50px"> </td>--}}
+                                                <td> {{ $category -> status=='1' ? 'Active' : 'Inactive'}} </td>
                                                 <td>
-                                                <a href=" {{ route('category.edit', $categories->id) }}" class="btn btn-primary">Edit</a>
-                                                <a href="{{ route('category.delete', $categories->id) }}" class="btn btn-primary">Delete</a>
+                                                <a href=" {{ route('category.edit', $category->id) }}" class="btn btn-primary">Edit</a>
+                                                <a href="{{ route('category.delete', $category->id) }}" class="btn btn-primary">Delete</a>
                                                 </td>
                                             </tr>
                                             @empty
