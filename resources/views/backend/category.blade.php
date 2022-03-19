@@ -1,55 +1,33 @@
 @extends('backend.layouts.master')
 @section('content')
+{{--        {{ dd($settings) }}--}}
+          <form method="post" enctype="multipart/form-data" action="{{ route('category.create') }}">
+@csrf
+<div class="form-group">
+    <label for="exampleInputEmail1">Name</label>
+    <input type="text" class="form-control" aria-describedby="emailHelp" name="name" value="{{ $settings ? $settings->name : "" }}">
+</div>
+<div class="form-group">
+    <label for="exampleInputPassword1">description</label>
+    <input type="text" class="form-control"  name="description" value="{{ $settings ? $settings->description : "" }}">
+</div>
+<div class="form-group">
+    <label for="exampleInputPassword1">status</label>
+    <input type="text" class="form-control"  name="status" value="{{ $settings ? $settings->status : "" }}">
+</div>
 
-    <form>
-        <form>
-            <div class="form-group">
-                <label for="exampleFormControlFile1">Logo</label>
-                <input type="file" class="form-control-file" id="exampleFormControlFile1">
-            </div>
-        </form>
-        <div class="form-group">
-            <label for="exampleInputEmail1">System name</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                   placeholder="System name">
-        </div>
+<div class="form-group">
+    <label for="exampleInputPassword1">icon</label>
+    <input type="file" class="form-control"  name="icon">
+</div>
+@if(isset($settings) && $settings->icon)
 
-        <div class="form-group">
-            <label for="exampleInputEmail1">Mobile number</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                   placeholder="mobile number">
-        </div>
+    <div class="form-group">
+        <img src="{{$settings ? $settings->icon :'' }}" height="100px" width="100px">
+    </div>
+@endif
 
-        <div class="form-group">
-            <label for="exampleInputEmail1">Phone number</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                   placeholder="phone number">
-        </div>
-
-        <div class="form-group">
-            <label for="exampleInputEmail1">Adress</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                   placeholder="Adress">
-        </div>
-
-        <div class="form-group">
-            <label for="exampleInputEmail1">Facebook</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                   placeholder="facebook">
-        </div>
-
-        <div class="form-group">
-            <label for="exampleInputEmail1">Twitter</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                   placeholder="instagram">
-        </div>
-
-        <button type="button" class="btn btn-dark">update</button>
-
-
-    </form>
-
-
-
+<button type="submit" class="btn btn-primary">Update</button>
+</form>
 @endsection
 

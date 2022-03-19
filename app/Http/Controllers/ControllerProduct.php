@@ -51,6 +51,28 @@ class ControllerProduct extends Controller
         return redirect()->back();
     }
 
+    public function categorycreate(Request $request)
+    {
+        dd($request->all());
+        $icon = '';
+        $validated = $request->validate([
+
+            'name' => 'required',
+            'description' => 'required',
+            'icon' => 'required',
+            'status' => 'required',
+        ]);
+
+        $data = [
+
+            'name' => $request->get('name'),
+            'description' => $request->get('description'),
+            'status' => $request->get('status'),
+            'icon' => $icon,
+        ];
+
+    }
+
 
 
 }
