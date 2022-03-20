@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Category;
+use Exception;
+
 class ControllerProduct extends Controller
 {
     public function product()
@@ -51,25 +53,33 @@ class ControllerProduct extends Controller
         return redirect()->back();
     }
 
+
+
+
     public function categorycreate(Request $request)
     {
-        dd($request->all());
-        $icon = '';
-        $validated = $request->validate([
 
-            'name' => 'required',
+        $request->validate([
+            'name' =>'required',
             'description' => 'required',
-            'icon' => 'required',
-            'status' => 'required',
         ]);
+
+
+       try{
 
         $data = [
 
             'name' => $request->get('name'),
             'description' => $request->get('description'),
             'status' => $request->get('status'),
-            'icon' => $icon,
+            'icon' => $request->get('icon'),
         ];
+
+        Category::create($data);
+        return redirect()->route('category');
+       }catch(Exception $exception){
+            // dd($exception);
+       }
 
     }
 

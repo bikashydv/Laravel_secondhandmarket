@@ -29,7 +29,7 @@ Route::get('/product', [\App\Http\Controllers\ControllerProduct::class, 'product
 Route::get('/category', [\App\Http\Controllers\ControllerProduct::class, 'category'])->name('category');
 
 // categories
-Route::view('/create-category','backend.category')->name('category.create');
+Route::view('/create-category','backend.category')->name('category.create.view');
 Route::get('/categoryedit/{id}', [\App\Http\Controllers\ControllerProduct::class, 'categoryedit'])->name('category.edit');
 Route::get('/categorydelete/{id}', [\App\Http\Controllers\ControllerProduct::class, 'categorydelete'])->name('category.delete');
 Route::post('/categorycreate', [\App\Http\Controllers\ControllerProduct::class, 'categorycreate'])->name('category.create');
