@@ -53,7 +53,7 @@ class ControllerProduct extends Controller
 
     public function categorycreate(Request $request)
     {
-        dd($request->all());
+//        dd($request->all());
         $icon = '';
         $validated = $request->validate([
 
