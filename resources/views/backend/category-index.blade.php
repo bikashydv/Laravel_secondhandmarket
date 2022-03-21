@@ -8,7 +8,7 @@
                                     </h6>
                                 </div>
                                 <br>
-                                <a href="{{ route('category.create') }}"  style="position: absolute; right: 0;" class="btn btn-dark">+Add New Item</a>
+                                <a href="{{ route('category.create.view') }}"  style="position: absolute; right: 0;" class="btn btn-dark">+Add New Item</a>
                                 <br>
                                 <div class="card-body">
                                     <div class="table-responsive">
@@ -27,7 +27,7 @@
                                             <tbody>
                                             @forelse($categories as $category)
                                             <tr>
-                                                <th> {{ $category -> id ??  null }} </th>
+                                                <th> {{ $loop->iteration ??  null }} </th>
                                                 <td> {{ $category -> name ??  null }} </td>
                                                 <td> {{ $category -> description ??  null }} </td>
                                                 <td>  <i class="{{ $category->icon ?? '' }}"></i> </td>
