@@ -28,7 +28,7 @@ class ProductController extends Controller
     public function productdelete($id)
     {
 //        dd(" This product is deleted sucessfully");
-        Product:destroy($id);
+        Product::destroy($id);
         return redirect()->back();
     }
 
