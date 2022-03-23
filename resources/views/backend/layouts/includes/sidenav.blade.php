@@ -44,7 +44,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="examples/profile.html">
+                        <a class="nav-link" href="{{ route('product') }}">
                             <i class="ni ni-single-02 text-yellow"></i>
                             <span class="nav-link-text">Product</span>
                         </a>

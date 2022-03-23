@@ -13,6 +13,7 @@
                     <thead>
                     <tr>
                         <th scope="col">id</th>
+                        <th scope="col">Category</th>
                         <th scope="col">Name</th>
                         <th scope="col">Price</th>
                         <th scope="col">Author</th>
@@ -22,22 +23,25 @@
                     </tr>
                     </thead>
                     <tbody>
-             @if($products)
-                 @foreach($products as $product)
-                     <tr>
-                         <th>{{$loop->iteration}}</th>
-                         <td>{{$product->name}}</td>
-                         <td>{{$product->price}}</td>
-                         <td>{{$product->author}}</td>
-                         <td>{{$product->publih_on}}</td>
-                         <td>{{$product->image}}</td>
-                         <td>
-                         <a href="" class="btn btn-primary">Edit</a>
-                         <a href="{{ route('product.delete', $product->id) }}" class="btn btn-primary">Delete</a>
-                         </td>
-                     </tr>
-                 @endforeach
-             @endif
+                    @if($products)
+                        @foreach($products as $product)
+                            <tr>
+                                <th>{{$loop->iteration}}</th>
+                                {{--                         <td>{{( isset($product) && $product->category) ? $product->category->name :'' }}</td>--}}
+                                <td>{{ \App\Helper::getCategoryName(( isset($product) && $product->category) ?$product->category->id : '' ) ?? null  }}</td>
+                                <td>{{$product->name}}</td>
+                                <td>{{$product->price}}</td>
+                                <td>{{$product->author}}</td>
+                                <td>{{$product->publish_on}}</td>
+                                <td>{{$product->image}}</td>
+                                <td>
+                                    <a href="" class="btn btn-primary">Edit</a>
+                                    <a href="{{ route('product.delete', $product->id) }}"
+                                       class="btn btn-primary">Delete</a>
+                                </td>
+                            </tr>
+                        @endforeach
+                    @endif
                     </tbody>
                 </table>
             </div>

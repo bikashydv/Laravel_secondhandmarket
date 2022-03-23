@@ -16,4 +16,15 @@ class Helper
         return $categories;
     }
 
+    public  static function getCategoryName($id){
+        if(!$id){
+            return false;
+        }
+        $category = Category::find($id);
+        if($category){
+            return $category->name;
+        }
+        return false;
+    }
+
 }
