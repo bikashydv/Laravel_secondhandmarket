@@ -10,12 +10,12 @@ use phpDocumentor\Reflection\Types\False_;
 
 class ControllerProduct extends Controller
 {
-    public function product()
-    {
-        $products = Product::with('description')->get();
-//        dd($products);
-
-    }
+//    public function product()
+//    {
+//        $products = Product::with('description')->get();
+////        dd($products);
+//
+//    }
 
     public function category()
     {

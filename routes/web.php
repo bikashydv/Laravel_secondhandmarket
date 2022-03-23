@@ -35,6 +35,14 @@ Route::get('/categorydelete/{id}', [\App\Http\Controllers\ControllerProduct::cla
 Route::post('/categorycreate', [\App\Http\Controllers\ControllerProduct::class, 'categorycreate'])->name('category.create');
 Route::post('/categoryupdate/{id}', [\App\Http\Controllers\ControllerProduct::class, 'categoryupdate'])->name('category.update');
 
+//products
+
+Route::get('/product', [\App\Http\Controllers\ProductController::class, 'product'])->name('product');
+//Route::get('/productedit/{id}', [\App\Http\Controllers\ProductController::class, 'productedit'])->name('product.edit');
+Route::get('/productdelete/{id}', [\App\Http\Controllers\ProductController::class, 'productdelete'])->name('product.delete');
+//Route::post('/productupdate/{id}', [\App\Http\Controllers\ProductController::class, 'productupdate'])->name('product.update');
+
+
 
 
 //site settings
