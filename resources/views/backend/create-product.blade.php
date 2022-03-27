@@ -34,20 +34,10 @@
             <label for="exampleInputPassword1">description</label>
             <input type="text" class="form-control" name="description" value="">
         </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">status</label>
-
-            {{--    <input type="text" class="form-control"  name="status" >--}}
-            <select name="status" class="form-control">
-                <option value="1">Active</option>
-                <option value="0">Inactive</option>
-            </select>
-            {{-- <input type="text" class="form-control"  name="status" value=""> --}}
-        </div>
 
         <div class="form-group">
-            <label for="exampleInputPassword1">icon</label>
-            <input type="text" class="form-control" name="icon">
+            <label for="exampleInputPassword1">image</label>
+            <input type="text" class="form-control" name="image">
         </div>
 
         <button type="submit" class="btn btn-primary">Update</button>
