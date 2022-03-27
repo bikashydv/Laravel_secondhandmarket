@@ -39,9 +39,9 @@ Route::post('/categoryupdate/{id}', [\App\Http\Controllers\ControllerProduct::cl
 
 Route::get('/product', [\App\Http\Controllers\ProductController::class, 'product'])->name('product');
 Route::get('/product/create', [\App\Http\Controllers\ProductController::class, 'createProduct'])->name('product.create');
-//Route::get('/productedit/{id}', [\App\Http\Controllers\ProductController::class, 'productedit'])->name('product.edit');
+Route::get('/productedit/{id}', [\App\Http\Controllers\ProductController::class, 'productedit'])->name('product.edit');
 Route::get('/productdelete/{id}', [\App\Http\Controllers\ProductController::class, 'productdelete'])->name('product.delete');
-//Route::post('/productupdate/{id}', [\App\Http\Controllers\ProductController::class, 'productupdate'])->name('product.update');
+Route::post('/productupdate/{id}', [\App\Http\Controllers\ProductController::class, 'productupdate'])->name('product.update');
 
 
 

@@ -16,15 +16,15 @@ class ProductController extends Controller
         return view('backend.product-index', compact('products'));
     }
 
-//    public function productedit($id)
-//    {
-//        if (!$id) {
-//            return false;
-//        }
-//
-//        $product = Product::where('id', $id)->first();
-//        return view('backend.product-indexedit', compact('product'));
-//    }
+    public function productedit($id)
+    {
+        if (!$id) {
+            return false;
+        }
+
+        $product = Product::where('id', $id)->first();
+        return view('backend.product-indexedit', compact('product'));
+    }
 
     public function productdelete($id)
     {

@@ -7,7 +7,7 @@
                                         <center><h2> Categories Details</h2></center>
                                     </h6>
                                 </div>
-                                <br>
+           .                     <br>
                                 <a href="{{ route('category.create.view') }}"  style="position: absolute; right: 0;" class="btn btn-dark">+Add New Item</a>
                                 <br>
                                 <div class="card-body">
