@@ -34,6 +34,14 @@ class ProductController extends Controller
     }
 
 
+    public function productupdate(){
+    }
+
+    public function productStore(Request $request)
+    {
+        dd($request->all());
+    }
+
     public function createProduct()
     {
         $data['categories'] = Category::all();

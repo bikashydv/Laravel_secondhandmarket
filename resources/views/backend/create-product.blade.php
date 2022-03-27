@@ -11,9 +11,8 @@
         </div>
     @endif
     {{--        {{ dd($settings) }}--}}
-    <form method="post" enctype="multipart/form-data" action="{{route('category.create')}}">
+    <form method="post" enctype="multipart/form-data" action="{{route('product.store')}}">
         @csrf
-
         <div class="form-group">
             <label for="exampleInputEmail1">Category</label>
             <select class="form-control" name="category" id="category">
