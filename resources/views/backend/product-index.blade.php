@@ -2,7 +2,7 @@
 @section('content')
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <a href=""  style="position: absolute; right: 0;" class="btn btn-dark">+Add New Item</a>
+            <a href="{{ route('product.create') }}"  style="position: absolute; right: 0;" class="btn btn-dark">+Add New Item</a>
 
             <h6 class="m-0 font-weight-bold text-primary">
                 <center><h2> Product Details</h2></center>

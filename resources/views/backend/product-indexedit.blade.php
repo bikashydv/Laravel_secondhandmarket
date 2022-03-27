@@ -19,11 +19,15 @@
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">price</label>
-            <input type="text" class="form-control"  name="price" value="{{$product ? $product->price : ''}}">
+            <input type="text" class="form-control"  name="Price" value="{{$product ? $product->price : ''}}">
         </div>
         <div class="form-group">
-            <label for="exampleInputPassword1">price</label>
-            <input type="text" class="form-control"  name="price" value="{{$product ? $product->price : ''}}">
+            <label for="exampleInputPassword1">Author</label>
+            <input type="text" class="form-control"  name="Author" value="{{$product ? $product->author : ''}}">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Publish on</label>
+            <input type="text" class="form-control"  name="Publish on" value="{{$product ? $product->publish_on : ''}}">
         </div>
 
         <button type="submit" class="btn btn-primary">Update</button>
