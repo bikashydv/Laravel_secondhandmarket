@@ -21,9 +21,9 @@ class ProductController extends Controller
         if (!$id) {
             return false;
         }
-
-        $product = Product::where('id', $id)->first();
-        return view('backend.product-indexedit', compact('product'));
+        $data['categories'] = Category::all();
+        $data['product'] = Product::where('id', $id)->first();
+        return view('backend.product-indexedit', $data);
     }
 
     public function productdelete($id)
@@ -34,18 +34,14 @@ class ProductController extends Controller
     }
 
 
-    public function productupdate(){
+    public function productupdate(Request $request, $id){
 
-    }
-
-    public function productStore(Request $request)
-    {
-//        dd($request->all());
         $request->validate([
             'name' => 'required',
             'price' => 'required',
             'author' => 'required',
             'publish_on' => 'required',
+            'category' =>'required',
         ]);
         try {
             $data = [
@@ -54,9 +50,37 @@ class ProductController extends Controller
                 'price' => $request->get('price'),
                 'author' => $request->get('author'),
                 'publish_on' => $request->get('publish_on'),
+                'category_id' => $request->get('category'),
             ];
 
-            Product::create($data);
+            Product::where('id', $id)->update($data);
+            return redirect()->route('product');
+        } catch (Exception $exception) {
+            // dd($exception);
+        }
+
+    }
+
+    public function productStore(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'price' => 'required',
+            'author' => 'required',
+            'publish_on' => 'required',
+            'category' =>'required',
+        ]);
+        try {
+            $data = [
+
+                'name' => $request->get('name'),
+                'price' => $request->get('price'),
+                'author' => $request->get('author'),
+                'publish_on' => $request->get('publish_on'),
+                'category_id' => $request->get('category'),
+            ];
+
+          Product::create($data);
             return redirect()->route('product');
         } catch (Exception $exception) {
             // dd($exception);

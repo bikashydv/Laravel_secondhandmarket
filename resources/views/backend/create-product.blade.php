@@ -39,7 +39,7 @@
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">publish on</label>
-            <input type="text" class="form-control" name="publish_on" value="">
+            <input type="date" class="form-control" name="publish_on" value="">
         </div>
 
         <button type="submit" class="btn btn-primary">Update</button>

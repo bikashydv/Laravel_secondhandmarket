@@ -15,6 +15,18 @@
         @csrf
 
         <div class="form-group">
+            <label for="exampleInputEmail1">Category</label>
+            <select class="form-control" name="category" id="category">
+                <option value="">--Select--</option>
+                @forelse($categories as $category)
+                    <option value="{{ $category ? $category->id :'' }}" {{ ($category &&  $category->id ==$product->category_id) ? 'selected' :'' }}> {{ $category ? $category->name :'' }} </option>
+                @empty
+                    <option>--NO Categoris</option>
+                @endforelse
+            </select>
+        </div>
+
+        <div class="form-group">
             <label for="exampleInputEmail1">Name</label>
             <input type="text" class="form-control" aria-describedby="emailHelp" name="name" value="{{$product ? $product->name : ''}}">
         </div>
