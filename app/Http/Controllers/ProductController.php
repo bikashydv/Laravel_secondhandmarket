@@ -35,11 +35,33 @@ class ProductController extends Controller
 
 
     public function productupdate(){
+
     }
 
     public function productStore(Request $request)
     {
-        dd($request->all());
+//        dd($request->all());
+        $request->validate([
+            'name' => 'required',
+            'price' => 'required',
+            'author' => 'required',
+            'publish_on' => 'required',
+        ]);
+        try {
+            $data = [
+
+                'name' => $request->get('name'),
+                'price' => $request->get('price'),
+                'author' => $request->get('author'),
+                'publish_on' => $request->get('publish_on'),
+            ];
+
+            Product::create($data);
+            return redirect()->route('product');
+        } catch (Exception $exception) {
+            // dd($exception);
+        }
+
     }
 
     public function createProduct()

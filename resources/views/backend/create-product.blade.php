@@ -30,13 +30,16 @@
             <input type="text" class="form-control" aria-describedby="emailHelp" name="name" value="">
         </div>
         <div class="form-group">
-            <label for="exampleInputPassword1">description</label>
-            <input type="text" class="form-control" name="description" value="">
+            <label for="exampleInputPassword1">Price</label>
+            <input type="text" class="form-control" name="price" value="">
         </div>
-
         <div class="form-group">
-            <label for="exampleInputPassword1">image</label>
-            <input type="text" class="form-control" name="image">
+            <label for="exampleInputPassword1">Author</label>
+            <input type="text" class="form-control" name="author">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">publish on</label>
+            <input type="text" class="form-control" name="publish_on" value="">
         </div>
 
         <button type="submit" class="btn btn-primary">Update</button>

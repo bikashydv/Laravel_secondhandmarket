@@ -13,6 +13,7 @@
 {{--            {{ dd($product) }}--}}
     <form method="post" enctype="multipart/form-data" action="{{route('product.update', $product->id)}}">
         @csrf
+
         <div class="form-group">
             <label for="exampleInputEmail1">Name</label>
             <input type="text" class="form-control" aria-describedby="emailHelp" name="name" value="{{$product ? $product->name : ''}}">
