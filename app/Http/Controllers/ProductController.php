@@ -65,15 +65,15 @@ class ProductController extends Controller
     public function productStore(Request $request)
     {
 
-//            $image_url ='';
-//            if($request->hasFile('image')){
-//                $file = $request->file('image');
-//                $new_name = str_random(5).time().$file->getClientOriginalName();
-//                $upload_path =public_path('/uploads');
-//                $file->move($upload_path, $new_name);
-//                $image_url = asset('upload/'.$new_name);
-//                dd($image_url);
-//            }
+            $image_url ='';
+            if($request->hasFile('image')){
+                $file = $request->file('image');
+                $new_name = str_random(5).time().$file->getClientOriginalName();
+                $upload_path =public_path('/uploads');
+                $file->move($upload_path, $new_name);
+                $image_url = asset('upload/'.$new_name);
+                dd($image_url);
+            }
 
 
         $request->validate([
@@ -102,7 +102,7 @@ class ProductController extends Controller
 
     }
 
-    public function createProduct($Request )
+    public function createProduct( )
     {
         $data['categories'] = Category::all();
         return view('backend.create-product', $data);
