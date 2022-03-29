@@ -1,4 +1,4 @@
-    @extends('backend.layouts.master')
+@extends('backend.layouts.master')
 @section('content')
 
     @if ($errors->any())
@@ -27,7 +27,7 @@
 
         <div class="form-group">
             <label for="exampleInputEmail1">Name</label>
-            <input type="text" class="form-control" aria-describedby="emailHelp" name="name" value="">
+            <input type="text" class="form-control" aria-describedby="emailHelp" name="name">
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Price</label>
@@ -40,6 +40,11 @@
         <div class="form-group">
             <label for="exampleInputPassword1">publish on</label>
             <input type="date" class="form-control" name="publish_on" value="">
+        </div>
+
+        <div>
+            <label for="formFileLg" class="form-label">Large file input example</label>
+            <input class="form-control form-control-lg" id="formFileLg" type="file">
         </div>
 
         <button type="submit" class="btn btn-primary">Update</button>

@@ -34,14 +34,15 @@ class ProductController extends Controller
     }
 
 
-    public function productupdate(Request $request, $id){
+    public function productupdate(Request $request, $id)
+    {
 
         $request->validate([
             'name' => 'required',
             'price' => 'required',
             'author' => 'required',
             'publish_on' => 'required',
-            'category' =>'required',
+            'category' => 'required',
         ]);
         try {
             $data = [
@@ -63,12 +64,25 @@ class ProductController extends Controller
 
     public function productStore(Request $request)
     {
+
+//            $image_url ='';
+//            if($request->hasFile('image')){
+//                $file = $request->file('image');
+//                $new_name = str_random(5).time().$file->getClientOriginalName();
+//                $upload_path =public_path('/uploads');
+//                $file->move($upload_path, $new_name);
+//                $image_url = asset('upload/'.$new_name);
+//                dd($image_url);
+//            }
+
+
         $request->validate([
             'name' => 'required',
             'price' => 'required',
             'author' => 'required',
             'publish_on' => 'required',
-            'category' =>'required',
+            'category' => 'required',
+
         ]);
         try {
             $data = [
@@ -80,7 +94,7 @@ class ProductController extends Controller
                 'category_id' => $request->get('category'),
             ];
 
-          Product::create($data);
+            Product::create($data);
             return redirect()->route('product');
         } catch (Exception $exception) {
             // dd($exception);
@@ -88,10 +102,10 @@ class ProductController extends Controller
 
     }
 
-    public function createProduct()
+    public function createProduct($Request )
     {
         $data['categories'] = Category::all();
-        return view('backend.create-product',$data);
+        return view('backend.create-product', $data);
 
     }
 
