@@ -102,7 +102,7 @@ class ProductController extends Controller
 
     }
 
-    public function createProduct($Request )
+    public function createProduct( )
     {
         $data['categories'] = Category::all();
         return view('backend.create-product', $data);
