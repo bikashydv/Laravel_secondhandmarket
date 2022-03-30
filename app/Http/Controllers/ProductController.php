@@ -44,6 +44,16 @@ class ProductController extends Controller
             'publish_on' => 'required',
             'category' => 'required',
         ]);
+
+        $image_url ='';
+        if($request->hasFile('image')){
+            $file = $request->file('image');
+            $new_name = str_random(5).time().$file->getClientOriginalName();
+            $path =public_path('/uploads');
+            $file->move($path, $new_name);
+            $image_url = asset('uploads/'.$new_name);
+//                dd($image_url);
+        }
         try {
             $data = [
 
@@ -64,17 +74,7 @@ class ProductController extends Controller
 
     public function productStore(Request $request)
     {
-
-            $image_url ='';
-            if($request->hasFile('image')){
-                $file = $request->file('image');
-                $new_name = str_random(5).time().$file->getClientOriginalName();
-                $upload_path =public_path('/uploads');
-                $file->move($upload_path, $new_name);
-                $image_url = asset('upload/'.$new_name);
-                dd($image_url);
-            }
-
+//        dd($request->all());
 
         $request->validate([
             'name' => 'required',
@@ -82,8 +82,22 @@ class ProductController extends Controller
             'author' => 'required',
             'publish_on' => 'required',
             'category' => 'required',
+            'image' => 'required',
 
         ]);
+
+            $image_url ='';
+            if($request->hasFile('image')){
+                $file = $request->file('image');
+                $new_name = str_random(5).time().$file->getClientOriginalName();
+                $upload_path =public_path('/uploads');
+                $file->move($upload_path, $new_name);
+                $image_url = asset('uploads/'.$new_name);
+//                dd($image_url);
+            }
+
+
+
         try {
             $data = [
 
@@ -92,12 +106,14 @@ class ProductController extends Controller
                 'author' => $request->get('author'),
                 'publish_on' => $request->get('publish_on'),
                 'category_id' => $request->get('category'),
-            ];
+                'image' => $image_url ?? '',
 
+            ];
+//            dd($data);
             Product::create($data);
             return redirect()->route('product');
         } catch (Exception $exception) {
-            // dd($exception);
+             dd($exception);
         }
 
     }

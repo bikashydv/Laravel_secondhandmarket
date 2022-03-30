@@ -44,6 +44,18 @@
             <label for="exampleInputPassword1">Publish on</label>
             <input type="text" class="form-control" name="publish_on" value="{{$product ? $product->publish_on : ''}}">
         </div>
+        <div>
+            <label for="formFileLg" class="form-label">product image</label>
+            <img src="{{ $product? $product->image: ''}}" height="100px" width="100px" >
+
+        </div>
+        <div>
+            <label for="formFileLg" class="form-label"></label>
+            <input class="form-control form-control-lg" id="formFileLg" type="file" name="image">
+        </div>
+
+
+
 
         <button type="submit" class="btn btn-primary">Update</button>
     </form>

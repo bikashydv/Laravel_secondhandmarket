@@ -36,7 +36,9 @@
                                 <td>{{$product->price}}</td>
                                 <td>{{$product->author}}</td>
                                 <td>{{$product->publish_on}}</td>
-{{--                                <td>{{$product->image}}</td>--}}
+                                <td>
+                                    <img src="{{ $product->image??'' }}" height="100px" width="100">
+                                </td>
                                 <td>
                                     <a href="{{ route('product.edit', $product->id) }}" class="btn btn-primary">Edit</a>
                                     <a href="{{ route('product.delete', $product->id) }}"

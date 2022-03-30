@@ -44,7 +44,7 @@
 
         <div>
             <label for="formFileLg" class="form-label">Large file input example</label>
-            <input class="form-control form-control-lg" id="formFileLg" type="file">
+            <input class="form-control form-control-lg" id="formFileLg" type="file" name="image">
         </div>
 
         <button type="submit" class="btn btn-primary">Update</button>
