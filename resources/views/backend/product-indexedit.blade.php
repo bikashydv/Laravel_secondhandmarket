@@ -42,7 +42,7 @@
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Publish on</label>
-            <input type="text" class="form-control" name="publish_on" value="{{$product ? $product->publish_on : ''}}">
+            <input type="date" class="form-control" name="publish_on" value="{{$product ? $product->publish_on : ''}}">
         </div>
         <div>
             <label for="formFileLg" class="form-label">product image</label>

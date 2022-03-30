@@ -62,6 +62,7 @@ class ProductController extends Controller
                 'author' => $request->get('author'),
                 'publish_on' => $request->get('publish_on'),
                 'category_id' => $request->get('category'),
+                'image' => $image_url,
             ];
 
             Product::where('id', $id)->update($data);
