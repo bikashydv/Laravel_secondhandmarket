@@ -18,6 +18,8 @@
     <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
     <!-- firebase -->
     <script src="https://www.gstatic.com/firebasejs/5.8.3/firebase.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
 </head>
 
 <body>
@@ -177,23 +179,7 @@
 
     <!-- top picks for you -->
     <!-- top picks for you -->
-    <div class="topPicks">
-        <div class="container" id="topPicksContainer">
-            <div class="heading">
-                <h2 id="categoryHeading">Recently added</h2>
-                <hr>
-            </div>
-            <div class="picks" id="picks">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="..." alt="Card image cap">
-                    <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
+    @include('frontend.products')
     <!-- /top picks for you -->
 
     <!-- footer -->
