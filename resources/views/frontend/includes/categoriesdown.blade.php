@@ -16,6 +16,8 @@
             @empty
 
             @endforelse
+
+
 {{--                <div class="bottom">--}}
 {{--                    <a href="javascript:void(0)">Tablets</a>--}}
 {{--                    <a href="javascript:void(0)">Accessories</a>--}}

@@ -16,6 +16,7 @@ Route::get('/', function () {
     $data =[];
     \App\Helper::updateSiteSetting();
     $data['categories'] = \App\Helper::getCategories();
+    $data['products'] = \App\Product::with('category','description')->paginate(20);
     return view('frontend.master', $data);
 });
 
