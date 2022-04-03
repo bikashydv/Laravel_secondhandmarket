@@ -20,6 +20,11 @@
     <script src="https://www.gstatic.com/firebasejs/5.8.3/firebase.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 
+    <script type="text/javascript">
+        $(document).ready(function() {
+            alert();
+        });
+    </script>
 </head>
 
 <body>
@@ -244,18 +249,18 @@
 
 
 <!-- service worker -->
-<script>
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('./sw.js')
-            .then(res => {
-                console.log('SW registered');
-            }).catch(err => {
-            console.log('Error in SW registration', err);
-        })
-    } else {
-        console.log('Browser does not support SW');
-    }
-</script>
+{{--<script>--}}
+{{--    if ('serviceWorker' in navigator) {--}}
+{{--        navigator.serviceWorker.register('./sw.js')--}}
+{{--            .then(res => {--}}
+{{--                console.log('SW registered');--}}
+{{--            }).catch(err => {--}}
+{{--            console.log('Error in SW registration', err);--}}
+{{--        })--}}
+{{--    } else {--}}
+{{--        console.log('Browser does not support SW');--}}
+{{--    }--}}
+{{--</script>--}}
 <!-- js -->
 <script src="{{asset('js/frontend.js')}}"></script>
 </body>

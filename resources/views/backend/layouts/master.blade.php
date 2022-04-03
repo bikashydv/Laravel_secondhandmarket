@@ -12,7 +12,7 @@
 {{--    {{dd(asset('img/brand/favicon.png'))}}--}}
 
     <link rel="icon" href="{{asset('img/brand/1.png')}}" type="image/png">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
     <!-- Icons -->
@@ -61,6 +61,9 @@
 <script src="{{asset('js/Chart.extension.js')}}"></script>
 <!-- Argon JS -->
 <script src="{{asset('js/argon.js?v=1.2.0')}}"></script>
+
+
+
 </body>
 
 </html>

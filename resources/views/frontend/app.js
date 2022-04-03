@@ -1,51 +1,51 @@
 var currentUserName;
 var currentUserUid;
 
-window.onload = () => {
-    firebase.auth().onAuthStateChanged(function (user) {
-        if (user) {
-            // show user's name after sign in
-            firebase.database().ref('/users/' + user.uid).once('value', (success) => {
-                currentUserUid = success.val().userUid;
-                currentUserName = success.val().signupName;
-                if (currentUserUid === user.uid) {
-                    signinBtn.innerHTML = `<i style="font-size:18px; vertical-align:middle;" class="fas fa-user-circle"></i> &nbsp; ${currentUserName}`;
-                }
-            });
-
-            // User is signed in.
-            localStorage.setItem('auth', JSON.stringify(user));
-            signoutBtn.setAttribute("onclick", "signOutBtn_f()");
-
-            // for signoutHover
-            document.getElementById("dropdownContent").removeAttribute('id', 'dropdownContent');
-
-            //allow to click on sellBtn
-            sellBtn.addEventListener('click', () => {
-                signinPopup.style.display = "none";
-                signupPopup.style.display = "none";
-                sellPopup.style.display = "none";
-                categoryPopup.style.display = "flex";
-            })
-        } else {
-            // No user is signed in.
-            signinBtn.setAttribute("onclick", "signinBtn_f()");
-            signinBtn.innerText = "Sign In";
-            localStorage.clear()
-
-            // for signoutHover
-            document.getElementsByClassName("dropdownContent")[0].setAttribute('id', 'dropdownContent');
-
-            //don't allow to click on sellBtn
-            sellBtn.addEventListener('click', () => {
-                signinPopup.style.display = "flex";
-                signupPopup.style.display = "none";
-                sellPopup.style.display = "none";
-                categoryPopup.style.display = "none";
-            })
-        }
-    });
-}
+// window.onload = () => {
+//     firebase.auth().onAuthStateChanged(function (user) {
+//         if (user) {
+//             // show user's name after sign in
+//             firebase.database().ref('/users/' + user.uid).once('value', (success) => {
+//                 currentUserUid = success.val().userUid;
+//                 currentUserName = success.val().signupName;
+//                 if (currentUserUid === user.uid) {
+//                     signinBtn.innerHTML = `<i style="font-size:18px; vertical-align:middle;" class="fas fa-user-circle"></i> &nbsp; ${currentUserName}`;
+//                 }
+//             });
+//
+//             // User is signed in.
+//             localStorage.setItem('auth', JSON.stringify(user));
+//             signoutBtn.setAttribute("onclick", "signOutBtn_f()");
+//
+//             // for signoutHover
+//             document.getElementById("dropdownContent").removeAttribute('id', 'dropdownContent');
+//
+//             //allow to click on sellBtn
+//             sellBtn.addEventListener('click', () => {
+//                 signinPopup.style.display = "none";
+//                 signupPopup.style.display = "none";
+//                 sellPopup.style.display = "none";
+//                 categoryPopup.style.display = "flex";
+//             })
+//         } else {
+//             // No user is signed in.
+//             signinBtn.setAttribute("onclick", "signinBtn_f()");
+//             signinBtn.innerText = "Sign In";
+//             localStorage.clear()
+//
+//             // for signoutHover
+//             document.getElementsByClassName("dropdownContent")[0].setAttribute('id', 'dropdownContent');
+//
+//             //don't allow to click on sellBtn
+//             sellBtn.addEventListener('click', () => {
+//                 signinPopup.style.display = "flex";
+//                 signupPopup.style.display = "none";
+//                 sellPopup.style.display = "none";
+//                 categoryPopup.style.display = "none";
+//             })
+//         }
+//     });
+// }
 
 // signin popup
 var signinBtn = document.getElementById("signinBtn");
@@ -212,36 +212,36 @@ var signupPw = document.getElementById("signupPw");
 var signupForm = document.getElementById("signupForm");
 var signupWarning = document.getElementById("signupWarning");
 
-signupForm.onsubmit = (e) => {
-    e.preventDefault();
-    firebase.auth().createUserWithEmailAndPassword(signupEmail.value, signupPw.value).then((success) => {
-        console.log(success);
-        console.log("Signed up");
-        var user = firebase.auth().currentUser;
-        var uid;
-        if (user != null) {
-            uid = user.uid;
-        }
-        var firebaseRef = firebase.database().ref("users");
-        var userData = {
-            signupName: signupName.value,
-            signupEmail: signupEmail.value,
-            signupPw: signupPw.value,
-            userUid: uid,
-        }
-        firebaseRef.child(uid).set(userData);
-
-        signupPopup.style.display = "none";
-
-    }).catch((error) => {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-
-        signupWarning.innerText = errorMessage;
-        signupWarning.style.display = "block";
-    });
-}
+// signupForm.onsubmit = (e) => {
+//     e.preventDefault();
+//     firebase.auth().createUserWithEmailAndPassword(signupEmail.value, signupPw.value).then((success) => {
+//         console.log(success);
+//         console.log("Signed up");
+//         var user = firebase.auth().currentUser;
+//         var uid;
+//         if (user != null) {
+//             uid = user.uid;
+//         }
+//         var firebaseRef = firebase.database().ref("users");
+//         var userData = {
+//             signupName: signupName.value,
+//             signupEmail: signupEmail.value,
+//             signupPw: signupPw.value,
+//             userUid: uid,
+//         }
+//         firebaseRef.child(uid).set(userData);
+//
+//         signupPopup.style.display = "none";
+//
+//     }).catch((error) => {
+//         // Handle Errors here.
+//         var errorCode = error.code;
+//         var errorMessage = error.message;
+//
+//         signupWarning.innerText = errorMessage;
+//         signupWarning.style.display = "block";
+//     });
+// }
 
 
 // signin with email
@@ -275,21 +275,21 @@ signinForm.onsubmit = (e) => {
 
 // signout
 var signoutBtn = document.getElementById("signoutBtn");
-function signOutBtn_f() {
-    firebase.auth().signOut().then(function () {
-        // Sign-out successful.
-        localStorage.clear();
-        signinEmail.value = "";
-        signinPw.value = "";
-        console.log("Signed out");
-
-        // set ads to default afer user signed out
-        location.reload();
-
-    }).catch(function (error) {
-        // An error happened.
-    });
-}
+// function signOutBtn_f() {
+//     firebase.auth().signOut().then(function () {
+//         // Sign-out successful.
+//         localStorage.clear();
+//         signinEmail.value = "";
+//         signinPw.value = "";
+//         console.log("Signed out");
+//
+//         // set ads to default afer user signed out
+//         location.reload();
+//
+//     }).catch(function (error) {
+//         // An error happened.
+//     });
+// }
 
 // fetching all ads
 var allAds = [];
