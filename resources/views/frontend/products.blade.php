@@ -1,7 +1,4 @@
 
-
-
-
 <div class="topPicks">
     <div class="container" id="topPicksContainer">
         <div class="heading">
@@ -11,7 +8,7 @@
         @forelse( $products as $product )
             <div class="card" style="width:400px">
                 <img class="card-img-top"
-                     src="https://www.publicdomainpictures.net/pictures/320000/velka/background-image.png"
+                     src="{{ $product ? $product->image :'' }}"
                      alt="Card image" style="width:100%">
                 <div class="card-body">
                     <h4 class="card-title">{{ $product->name ?? '' }}</h4>
@@ -68,6 +65,7 @@
 
 
 <script>
+
     $('.product').click(function () {
         var prd_id = $(this).data('id');
         if (prd_id == '' || typeof prd_id == "undefined") {
