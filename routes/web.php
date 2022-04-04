@@ -60,5 +60,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/category_view','ControllerProduct@categoryView')->name('category.view');
 
 
+//Ajax Route
+Route::post('/product/info', [\App\Http\Controllers\ProductController::class, 'getInfo'])->name('product.info');
+
 
 

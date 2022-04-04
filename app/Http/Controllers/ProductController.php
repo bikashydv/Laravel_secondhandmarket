@@ -127,4 +127,19 @@ class ProductController extends Controller
 
     }
 
+    public function getInfo(Request  $request)
+    {
+        if (!$request->id){
+            return response()->json(['error' => 'Id is missing']);
+        }
+
+        $product = Product::find($request->id);
+        if ($product){
+            return response()->json($product);
+        }else{
+            return response()->json(['error' => 'Not found']);
+        }
+
+    }
+
 }
