@@ -142,4 +142,14 @@ class ProductController extends Controller
 
     }
 
+    public function buyproduct(Request $request)
+    {
+//        dd($request->all());
+        switch ($request->input('action')) {
+            case 'buy':
+                return $this->buyproduct($request);
+        }
+        abort(400, 'Invalid action');
+    }
+
 }

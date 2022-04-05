@@ -46,8 +46,6 @@ Route::get('/productdelete/{id}', [\App\Http\Controllers\ProductController::clas
 Route::post('/productupdate/{id}', [\App\Http\Controllers\ProductController::class, 'productupdate'])->name('product.update');
 
 
-
-
 //site settings
 //\Illuminate\Support\Facades\Route::get('/site_setting',[\App\Http\Controllers\ControllerProduct::class,'site'])->name('site.setting');
 \Illuminate\Support\Facades\Route::get('/site_setting',[\App\Http\Controllers\SiteSettingController::class,'site'])->name('site.setting');
@@ -63,5 +61,7 @@ Route::get('/category_view','ControllerProduct@categoryView')->name('category.vi
 //Ajax Route
 Route::post('/product/info', [\App\Http\Controllers\ProductController::class, 'getInfo'])->name('product.info');
 
+//frontend recent  page
+Route::get('/buy', [\App\Http\Controllers\ProductController::class, 'buyproduct'])->name('product.buy');
 
 
