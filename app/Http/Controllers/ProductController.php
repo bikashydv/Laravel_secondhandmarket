@@ -142,14 +142,16 @@ class ProductController extends Controller
 
     }
 
-    public function buyproduct(Request $request)
+    public function buyproduct(Request $request, $id)
     {
-//        dd($request->all());
-        switch ($request->input('action')) {
-            case 'buy':
-                return $this->buyproduct($request);
+        if (!$request->id){
+            return redirect()->back();
         }
-        abort(400, 'Invalid action');
+        $data['product'] = Product::find($request->id);
+        if($data['product']){
+            return view('frontend.payment', $data);
+        }
+       return redirect()->back();
     }
 
 }

@@ -55,9 +55,9 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">AddToCart</button>
-                <a href="{{ route('product.buy') }}" class="btn btn-primary">$Buy</a>
-
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
+                <a href="{{ route('product.buy') }}" class="btn btn-primary" id="buy_anchor" target="_blank">$Buy</a>
+                <input type="hidden" name="product_id" value="" id="product_id">
             </div>
         </div>
     </div>
@@ -79,11 +79,14 @@
             data: {id: prd_id,_token:"{{csrf_token()}}"}
         }).done(function (msg) {
             console.log(msg);
-
+            $('#product_id').val(prd_id);
                $('#name').text(msg.name);
                $('#price').text(msg.price);
                $('#author').text(msg.author);
                $('#publish_on').text(msg.publish_on);
+               var buy_url = "{{ route('product.buy') }}/" +prd_id;
+            $("#buy_anchor").attr("href", buy_url)
+               console.log(buy_url);
             // window.$('#exampleModalCenter').modal();
             $('#exampleModalCenter').modal('show');
             });
