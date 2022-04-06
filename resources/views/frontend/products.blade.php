@@ -56,7 +56,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
-                <a href="{{ route('product.buy') }}" class="btn btn-primary" id="buy_anchor" target="_blank">$Buy</a>
+                <a href="#" class="btn btn-primary" id="buy_anchor" target="_blank">$Buy</a>
                 <input type="hidden" name="product_id" value="" id="product_id">
             </div>
         </div>
@@ -84,7 +84,8 @@
                $('#price').text(msg.price);
                $('#author').text(msg.author);
                $('#publish_on').text(msg.publish_on);
-               var buy_url = "{{ route('product.buy') }}/" +prd_id;
+               var buy_url = "{{ route('product.buy', ':id') }}";
+               buy_url = buy_url.replace(':id', prd_id);
             $("#buy_anchor").attr("href", buy_url)
                console.log(buy_url);
             // window.$('#exampleModalCenter').modal();
