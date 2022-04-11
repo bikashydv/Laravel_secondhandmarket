@@ -4,7 +4,7 @@
             <div class="left">
                 <div class="mainLogo">
                     <a href="{{ url('/') }}">
-                        <img src="{{ \Illuminate\Support\Facades\Session::get('site_setting') ?  \Illuminate\Support\Facades\Session::get('site_setting')->logo: ''  }}" alt="logo" height="45px" width="45px">
+                        <img src="{{ \Illuminate\Support\Facades\Session::get('site_setting') ?  \Illuminate\Support\Facades\Session::get('site_setting')->logo: ''  }}" alt="logo" height="40px" width="45px">
                     </a>
                 </div>
                 <div class="location">
@@ -20,6 +20,13 @@
                     </div>
                 </div>
             </div>
+<style>
+    .dropdown{
+        padding: 10px ;
+    }
+
+</style>
+
             <div class="right">
                 <div class="signinBtnDiv">
                     <div class="dropdown">
@@ -44,8 +51,7 @@
     <div class="bottom">
         <div class="container">
             <div class="dropdown">
-                <a href="javascript:void(0)" id="browseCategories">Browse by Categories&nbsp; <i
-                        class="fas fa-angle-down"></i></a>
+                <a href="javascript:void(0)" id="browseCategories">Browse by Categories&nbsp; <i class="fas fa-angle-down"></i></a>
                 <div class="dropdownContent">
                     <a href="Javascript:void(0)" onclick="filter('All')">All Categories</a>
 {{--                    @if(isset(@var))--}}
