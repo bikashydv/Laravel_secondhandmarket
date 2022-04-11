@@ -6,6 +6,8 @@
             <hr>
         </div>
         @forelse( $products as $product )
+            <div class="product-area pt-60 pb-50">
+                <div class="container">
             <div class="card" style="width:400px">
                 <img class="card-img-top"
                      src="{{ $product ? $product->image :'' }}"
