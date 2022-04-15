@@ -62,6 +62,6 @@ Route::get('/category_view','ControllerProduct@categoryView')->name('category.vi
 Route::post('/product/info', [\App\Http\Controllers\ProductController::class, 'getInfo'])->name('product.info');
 
 //frontend recent  page
-Route::get('/buy/{id}', [\App\Http\Controllers\ProductController::class, 'buyproduct'])->name('product.buy');
+Route::get('/buy/{id}', [\App\Http\Controllers\ProductController::class, 'buyproduct'])->name('product.buy')->middleware('auth');
 
 
