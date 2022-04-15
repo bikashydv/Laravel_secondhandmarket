@@ -27,7 +27,7 @@
 
 
     <style>
-        .footer{
+        .footer{e
             position: fixed;
             margin-top: auto;
             bottom: 0;
