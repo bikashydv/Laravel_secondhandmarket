@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="{{asset('css/payment')}}" type="text/css">
+<link rel="stylesheet" href="{{ asset('css/payment') }}" type="text/css">
 <form method="post" enctype="multipart/form-data" action="{{ route('product.buy',$product->id) }}">
 
 <div class="container p-0">
