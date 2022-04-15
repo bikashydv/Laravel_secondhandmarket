@@ -17,8 +17,10 @@
 </head>
 
 <body>
-
-                <form method="post" enctype="multipart/form-data" action="{{ route('product.buy',$product->id) }}">
+                <h2> You're buying : {{ $product->name }}</h2>
+                <h3> {{ \Illuminate\Support\Facades\Auth::check() ?  \Illuminate\Support\Facades\Auth::user()->name : '' }}</h3>
+                <form method="post" enctype="multipart/form-data" action="{{ route('product.order',$product->id) }}">
+                    @csrf
                     <div class="container-fluid px-1 px-md-2 px-lg-4 py-5 mx-auto">
                         <div class="row d-flex justify-content-center">
                             <div class="col-xl-7 col-lg-8 col-md-9 col-sm-11">
@@ -48,9 +50,9 @@
                                             </div>
                                         </div>
                                         <div class="col-sm-5 text-sm-center justify-content-center pt-4 pb-4"> <small class="text-sm text-muted">Order number</small>
-                                            <h5 class="mb-5">12345678</h5> <small class="text-sm text-muted">Payment amount</small>
+                                            <h5 class="mb-5">{{ rand(8,100000) }}</h5> <small class="text-sm text-muted">Payment amount</small>
                                             <div class="row px-3 justify-content-sm-center">
-                                                <h2 class=""><span class="text-md font-weight-bold mr-2">$</span><span class="text-danger">59.49</span></h2>
+                                                <h2 class=""><span class="text-md font-weight-bold mr-2">$</span><span class="text-danger">{{ $product->price }}</span></h2>
                                             </div> <button type="submit" class="btn btn-red text-center mt-4">PAY</button>
                                         </div>
                                     </div>

@@ -154,4 +154,13 @@ class ProductController extends Controller
        return redirect()->back();
     }
 
+
+    public function storeOrder(Request  $request,$id)
+    {
+        dd($request->all());
+
+
+    }
+
+
 }

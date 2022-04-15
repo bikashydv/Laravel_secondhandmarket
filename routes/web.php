@@ -63,5 +63,6 @@ Route::post('/product/info', [\App\Http\Controllers\ProductController::class, 'g
 
 //frontend recent  page
 Route::get('/buy/{id}', [\App\Http\Controllers\ProductController::class, 'buyproduct'])->name('product.buy')->middleware('auth');
+Route::post('/buy/{id}', [\App\Http\Controllers\ProductController::class, 'storeOrder'])->name('product.order')->middleware('auth');
 
 
