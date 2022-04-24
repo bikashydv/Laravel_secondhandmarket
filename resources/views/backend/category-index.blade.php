@@ -31,7 +31,7 @@
                                                 <td> {{ $category -> name ??  null }} </td>
                                                 <td> {{ $category -> description ??  null }} </td>
                                                 <td>  <i class="{{ $category->icon ?? '' }}"></i> </td>
-{{--                                                <td>  <img src="{{$category->image}}" height="50px"> </td>--}}
+{{--                                               <td>  <img src="{{$category->image}}" height="50px"> </td>--}}
                                                 <td> {{ $category -> status=='1' ? 'Active' : 'Inactive'}} </td>
                                                 <td>
                                                 <a href=" {{ route('category.edit', $category->id) }}" class="btn btn-primary">Edit</a>
