@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Http\Controllers\OrderController;
 use Illuminate\Database\Eloquent\Model;
 use App\Description;
 
@@ -19,5 +20,8 @@ class Product extends Model
 
         return $this->hasOne(Category::class,'id','category_id');
     }
+
+
+
 
 }

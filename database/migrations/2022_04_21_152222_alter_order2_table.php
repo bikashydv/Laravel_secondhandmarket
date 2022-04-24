@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AlterOrderTable extends Migration
+class AlterOrder2Table extends Migration
 {
     /**
      * Run the migrations.
@@ -14,11 +14,10 @@ class AlterOrderTable extends Migration
     public function up()
     {
         Schema::table('order', function (Blueprint $table) {
-            $table->string('email')->nullable();
-            $table->string('phone')->nullable();
-            $table->string('product_name')->nullable();
-            $table->Integer('order_no')->nullable();
             $table->string('user_name')->nullable();
+            $table->Integer('card_number')->nullable();
+            $table->date('buy_date')->nullable();
+            $table->Integer('cvv_cvc')->nullable();
 
         });
     }

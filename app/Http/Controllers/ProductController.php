@@ -155,12 +155,7 @@ class ProductController extends Controller
     }
 
 
-    public function storeOrder(Request  $request,$id)
-    {
-        dd($request->all());
 
-
-    }
 
 
 }
