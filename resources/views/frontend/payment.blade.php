@@ -76,7 +76,7 @@ $order_no = rand(8,100000);
                                                                                              maxlength="5">
                             </div>
                             <div class="form-group">
-                                <p class="text-muted text-sm mb-0">CVV/CVC</p> <input type="password" name="cvv_cvc"
+                                <p class="text-muted text-sm mb-0">CVV/CVC</p> <input type="number" name="cvv_cvc"
                                                                                       placeholder="000" size="1"
                                                                                       minlength="3" maxlength="3">
                             </div>
