@@ -49,7 +49,7 @@ $order_no = rand(8,100000);
                                                                                     placeholder="Email" size="15">
                             </div>
                             <div class="form-group">
-                                <p class="text-muted text-sm mb-0">Phone</p> <input type="phone" name="phone" value="9845934192"
+                                <p class="text-muted text-sm mb-0">Phone</p> <input type="phone" name="phone" value="9806892006"
                                                                                     placeholder="phone number "
                                                                                     size="15">
                             </div>

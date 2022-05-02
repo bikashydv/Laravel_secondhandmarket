@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+
 class Order extends Model
 {
     protected $guarded = ['id'];
@@ -13,4 +14,5 @@ class Order extends Model
 
         return $this->hasOne(Order::class,'id','category_id');
     }
+
 }
