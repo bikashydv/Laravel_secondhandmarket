@@ -38,4 +38,17 @@ class ApiController extends Controller
        }
         return response()->json('Soething went wrong');
     }
+
+
+    public function jsonTest(){
+        $as_array = [
+            'name' => 'Bikash',
+            'age' => '20',
+            'faculty' => 'BCA',
+            'division' => 'first',
+        ];
+$json = json_encode($as_array);
+$decod = json_decode($json);
+       return response($json,200);
+    }
 }

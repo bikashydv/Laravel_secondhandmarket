@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\OrderMail;
 use App\Order;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Mockery\Exception;
 use Twilio\Rest\Client;
 
@@ -23,7 +25,7 @@ class OrderController extends Controller
             'product_name' => $request->get('product_name'),
             'user_name' => $request->get('user_name'),
             'email' => $request->get('email'),
-            'phone' => 98021786,
+            'phone' => 9806892006,
             'name' => $request->get('name'),
             'card_number' => $request->get('card_number'),
             'buy_date' => $request->get('buy_date'),
@@ -35,6 +37,10 @@ class OrderController extends Controller
         $status = Order::create($payment_data);
         if ($status) {
             try {
+                //yeta mail pathaune
+//                    $mail_status =  Mail::send(new OrderMail());
+
+
 //            dd( env('TWILLIO_SID'), env('TWILLIO_TOKEN'));
 
                 // Your Account SID and Auth Token from twilio.com/console
@@ -52,7 +58,7 @@ class OrderController extends Controller
                         // A Twilio phone number you purchased at twilio.com/console dd($status);
                         'from' => '+16072845024',
                         // the body of the text message you'd like to send
-                        'body' =>"Greetings from SecondHandBazar,Below are the details of your order.OrderNo: $status->order_no,Product is: $status->product_name,Total Price: $status->price"
+                        'body' =>"Greetings from SecondHandBazar,Below are the details of your order and please check your email for more detailss.OrderNo: $status->order_no,Product is: $status->product_name,Total Price: $status->price"
                     ]
                 );
 
