@@ -18,7 +18,7 @@ Route::get('/', function () {
     $data['categories'] = \App\Helper::getCategories();
     $data['products'] = \App\Product::with('category','description')->paginate(20);
     return view('frontend.master', $data);
-})->name('home');
+ })->name('home');
 
 Route::get('/admin/login', [\App\Http\Controllers\AdminController::class, 'login'])->name('admin.login');
 Route::get('/dashboard', [\App\Http\Controllers\AdminController::class, 'adminDashboard'])->name('admin.dashboard');
@@ -47,7 +47,6 @@ Route::post('/productupdate/{id}', [\App\Http\Controllers\ProductController::cla
 
 
 //site settings
-//\Illuminate\Support\Facades\Route::get('/site_setting',[\App\Http\Controllers\ControllerProduct::class,'site'])->name('site.setting');
 \Illuminate\Support\Facades\Route::get('/site_setting',[\App\Http\Controllers\SiteSettingController::class,'site'])->name('site.setting');
 \Illuminate\Support\Facades\Route::post('/update_settings',[\App\Http\Controllers\SiteSettingController::class,'updateSetting'])->name('update.setting');
 
@@ -64,5 +63,3 @@ Route::post('/product/info', [\App\Http\Controllers\ProductController::class, 'g
 //frontend recent  page
 Route::get('/buy/{id}', [\App\Http\Controllers\ProductController::class, 'buyproduct'])->name('product.buy')->middleware('auth');
 Route::post('/pay/{id}', [\App\Http\Controllers\OrderController::class, 'storeOrder'])->name('product.order')->middleware('auth');
-//\Illuminate\Support\Facades\Route::get('/sms',[\App\Http\Controllers\OrderController::class,'index']);
-//->name('sms')

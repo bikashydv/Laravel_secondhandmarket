@@ -43,7 +43,7 @@ class AdminController extends Controller
 
     }
 
-    public function AdminDashboard()
+    public function     AdminDashboard()
     {
         return view('backend.layouts.dashboard');
     }
