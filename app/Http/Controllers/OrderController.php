@@ -53,10 +53,10 @@ class OrderController extends Controller
                 // Use the client to do fun stuff like send text messages!
                 $client->messages->create(
                 // the number you'd like to send the message to
-                    '+9779806892006',
+                    '+9779807214786',
                     [
                         // A Twilio phone number you purchased at twilio.com/console dd($status);
-                        'from' => '+16072845024',
+                        'from' => '+14142969664',
                         // the body of the text message you'd like to send
                         'body' =>"Greetings from SecondHandBazar,Below are the details of your order and please check your email for more detailss.OrderNo: $status->order_no,Product is: $status->product_name,Total Price: $status->price"
                     ]

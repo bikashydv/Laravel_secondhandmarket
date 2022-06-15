@@ -26,10 +26,10 @@ class SmsController extends Controller
             // Use the client to do fun stuff like send text messages!
             $client->messages->create(
             // the number you'd like to send the message to
-                '+9779806892006',
+                '+9779807214786',
                 [
                     // A Twilio phone number you purchased at twilio.com/console
-                    'from' => '+16072845024',
+                    'from' => '+14142969664',
                     // the body of the text message you'd like to send
                     'body' => 'Hello, your payment is successful and your OPT is:' .$otp,
                 ]
